@@ -9,6 +9,7 @@
         "babel-preset-es2015": "^6.24.1",
         "babel-preset-react": "^6.24.1",
         "cancelable-promise": "^3.2.3",
+        "dotenv": "^10.0.0",
         "react": "^17.0.2",
         "react-test-renderer": "^17.0.2"
     },
