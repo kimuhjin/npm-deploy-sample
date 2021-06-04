@@ -16,9 +16,9 @@ import { UploadFile } from 'npm-deploy-sample-uhjin';
 const upload = UploadFile(url, token, container);
 ```
 
--   **url** : 'https://스토리지계정명.blob.core.windows.net'
--   **token** : 해당 스토리지 SAS Token
--   **container** : 해당 스토리지에서 사용할 컨테이너명
+-   **url** : 'https://스토리지계정명.blob.core.windows.net' (**Required**)
+-   **token** : 해당 스토리지 SAS Token (**Required**)
+-   **container** : 해당 스토리지에서 사용할 컨테이너명 (**Required**)
 
 ### **Methods**
 
@@ -33,6 +33,7 @@ onChange={(e) ⇒ {upload.selectFiles(e.target.files);}
 
 업로드 할 파일 선택
 
+-   e.target.files (**Required**)
 -   return 값 없음
 
 <br/><br/>
@@ -45,12 +46,11 @@ upload.handleUpload(root, format, fileSize);
 
 파일 업로드 트리거
 
--   **root** : 폴더명 (String)
--   **format** : 업로드 가능한 format 지정 ( ['zip', 'pdf'] 꼴의 배열로 할당 ) (Array)
--   **fileSize** : 업로드 가능한 파일 maximum 크기 (bytes 단위) (Number)
+-   **root** : 폴더명 (String) (**Required**)
+-   **format** : 업로드 가능한 format 지정 ( ['zip', 'pdf'] 꼴의 배열로 할당 ) (Array) (**Required**)
+-   **fileSize** : 업로드 가능한 파일 maximum 크기 (bytes 단위) (Number) (**Required**)
 -   return 값 **없음**
-
-<br/><br/>
+    <br/><br/>
 
 **getUploadFiles**
 
@@ -86,8 +86,9 @@ upload.checkDuplicate(root);
 
 해당 폴더내 중복된 파일 리턴
 
--   **root** : 폴더명 (String)
+-   **root** : 폴더명 (String) (**Required**)
 -   return 값 **중복된 파일 배열**
+    <br/><br/>
 
 **getUploadedFiles**
 
@@ -119,8 +120,8 @@ upload.modifyFile(target, newRoot);
 
 경로/파일명 수정
 
--   **target** : 수정전 경로/파일명 (String)
--   **newRoot** : 수정후 경로/파일명 (String)
+-   **target** : 수정전 경로/파일명 (String) (**Required**)
+-   **newRoot** : 수정후 경로/파일명 (String) (**Required**)
 -   return 값 **없음**
     <br/><br/>
 
@@ -132,8 +133,8 @@ upload.moveFolder(target, newRoot);
 
 폴더 이동 (폴더 내 모든 파일 경로 수정)
 
--   **target** : 수정전 폴더 (String)
--   **newRoot** : 수정후 폴더 (String)
+-   **target** : 수정전 폴더 (String) (**Required**)
+-   **newRoot** : 수정후 폴더 (String) (**Required**)
 -   return 값 없음
     <br/><br/>
 
@@ -145,7 +146,7 @@ upload.deleteFile(target);
 
 해당 파일 삭제
 
--   **target** : 삭제할 파일 경로/파일명 (String)
+-   **target** : 삭제할 파일 경로/파일명 (String) (**Required**)
     <br/><br/>
 
 **deleteFolder**
@@ -156,7 +157,7 @@ upload.deleteFolder(target);
 
 해당 폴더 삭제
 
--   **target** : 삭제할 파일 경로/파일명 (String)
+-   **target** : 삭제할 파일 경로/파일명 (String) (**Required**)
     <br/><br/>
 
 **getFolderInfo**
@@ -167,7 +168,7 @@ upload.getFolderInfo(root);
 
 해당 폴더 정보 리턴
 
--   **target** : 폴더명 (String)
+-   **target** : 폴더명 (String) (**Required**)
 -   return 값 **객체**
 
 ```jsx

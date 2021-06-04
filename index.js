@@ -242,7 +242,7 @@ export const UploadFile = (url, token, container) => {
         });
         return {
             folderAmount: totalFolderAmount,
-            folderSizeByByte: totalFolderSize,
+            folderSizeByBytes: totalFolderSize,
         };
     };
     return {
